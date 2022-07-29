@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WebpackPwaManifest = require("webpack-pwa-manifest");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require("path");
 const { InjectManifest } = require("workbox-webpack-plugin");
 
@@ -30,10 +31,12 @@ module.exports = () => {
         swDest: "./sw.js",
       }),
 
+      new MiniCssExtractPlugin(),
+
       new WebpackPwaManifest({
         name: "text_editor",
-        short_name: "jake",
-        description: "JAKE text editor",
+        short_name: "jate",
+        description: "JATE text editor",
         background_color: "#ffffff",
         fingerprints: false,
         crossorigin: "use-credentials", //can be null, use-credentials or anonymous
@@ -50,19 +53,19 @@ module.exports = () => {
       rules: [
         {
           test: /\.css$/i,
-          use: ["style-loader", "css-loader"],
+          use: [MiniCssExtractPlugin.loader, "css-loader"],
+        },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          type: "asset/resource",
         },
         {
           test: /\.m?js$/,
-          exclude: /node_modules/,
+          exclude: /(node_modules|bower_components)/,
           use: {
             loader: "babel-loader",
             options: {
               presets: ["@babel/preset-env"],
-              plugins: [
-                "@babel/plugin-proposal-object-rest-spread",
-                "@babel/transform-runtime",
-              ],
             },
           },
         },
