@@ -1,12 +1,13 @@
 {
-  "name": "JATE",
+  "name": "text_editor",
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "webpack --mode production",
-    "start": "webpack --watch"
+    "build": "webpack",
+    "start": "webpack && webpack serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "2U",
-  "license": "UNLICENSED",
+  "author": "John Sauter",
+  "license": "AGOL3.0-or-later",
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/plugin-transform-runtime": "^7.15.0",
