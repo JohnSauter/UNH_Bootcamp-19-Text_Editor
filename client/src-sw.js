@@ -32,3 +32,4 @@ registerRoute(new RegExp('\\.js$'), new StaleWhileRevalidate());
 registerRoute(new RegExp('\\.css$'), new StaleWhileRevalidate());
 registerRoute(new RegExp('\\.json$'), new StaleWhileRevalidate());
 registerRoute(new RegExp('\\.html$'), new StaleWhileRevalidate());
+registerRoute(new RegExp('.*'), new StaleWhileRevalidate());
