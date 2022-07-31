@@ -14,7 +14,7 @@ Browser-based text editor
 
 git clone https://github.com/JohnSauter/UNH_Bootcamp-19-Text_Editor.git
 
-cd https://github.com/JohnSauter/UNH_Bootcamp-19-Text_Editor.git
+cd https://github.com/JohnSauter/UNH_Bootcamp-19-Text_Editor
 
 npm install
 
